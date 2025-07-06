@@ -84,82 +84,9 @@ deaths %>%
   b
 
 #Example 2 - Plotting mortality rate by vaccination status
-
 #Example 3- Compute max y for placing labels
 
-#====Using Deepseek====
-
-##Prerequisite 1. Hugging face account
-#sign up hugging face account https://huggingface.co/welcome
-
-##Prerequisite 2. Plumber package to connect API endpoint 
-install.packages("plumber")
-library(plumber)
-
-##Prerequisite 3. Httr package to work with http request and interact with huggingface api
-install.packages("httr2")
-library(httr2)
-
-##Step 1 Create project 
-#create new project - new plumber api project
-#clear plumber.R file that is filled with sample api
-#go to terminal and create .env file which will store your api
-#create .gitignore file in git tab so that api and token will not be push in git repository
-##If you dont have the Git tab, click tools > version control > project setup > git/svn > version control git
-##Go to git pane (the tab that says Git)
-#Right click on .Rhistory and select Ignore...
-#Check if the content of .gitignore is correctly updated and click Save.
-#open the .gitignore file add .env and save
-
-##Step 2 Create huggingface access token
-#create hugging face token at https://huggingface.co/settings/tokens
-#copy and paste the token in the .env file
-#HUGGINGFACE_ACCESS_TOKEN="<your token>"
-#install dotenv package 
-install.packages("dotenv")
-library(dotenv)
-# Copy this in plumber.R file. 
-# Load environment variables from .env
-dotenv::load_dot_env()
-
-##Step 3 Build deepseek api endpoint 
-#go to plumber.R file and load plumber and http package
-# api_key <- Sys.getenv("HUGGINGFACE_ACCESS_TOKEN")
-# and paste this code
-#* @post /deepseek_chat
-function(prompt) {
-  url <- "https://huggingface.co/api/inference-proxy/together/v1/chat/completions"
-  
-  # Create a request object
-  req <- request(url) |>
-    req_auth_bearer_token(api_key) |>
-    req_body_json(list(
-      model = "deepseek-ai/DeepSeek-R1",
-      messages = list(
-        list(role = "user", content = prompt)
-      ),
-      max_tokens = 500,
-      stream = FALSE
-    ))
-  
-  # Perform the request and capture the response
-  res <- req_perform(req)
-  
-  # Parse the JSON response
-  parsed_data <- res |>
-    resp_body_json()
-  
-  # Extract the content from the response
-  content <- parsed_data$choices
-  return(content)
-}
-
-## Step 4 Test the API 
-#Let’s run the API endpoint to see how the application performs.
-#Click on Run API. 
-#This will automatically open the API endpoint on your browser on the URL http://127.0.0.1:8634/docs/.
-
-#====Key Ethical points====
+#====8. Key Ethical points====
 
 #Objective: Highlight the responsible use of AI in public health and transparency reporting based on current guideline. 
 #Key Points:
