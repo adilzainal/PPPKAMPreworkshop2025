@@ -2,6 +2,35 @@
 # Chatgpt in rstudio is recommended for coding explanation, debug and general knowledge
 # Github copilot is recommended for real time code suggestion with ghost text, autocomplete style with proper sequence
 # With github education eligible for github copilot free subscription, you can use copilot in Rstudio
+#====Using Github copilot ====
+
+#Copilot offers autocomplete-style suggestions as you code as “ghost text”
+#This ghost-text is similar to the existing autocomplete available in RStudio but importantly is a generated suggestion rather than an exact auto-completion.
+
+
+#1.Navigate to Tools > Global Options > Copilot.
+#2.Check the box to “Enable GitHub Copilot”.
+#3.Download and install the Copilot Agent components.
+#4.Click the “Sign In” button.
+#5.In the “GitHub Copilot: Sign in” dialog, copy the Verification Code.
+#6.Navigate to or click on the link to https://github.com/login/device, paste the Verification Code and click “Continue”.
+#7.GitHub will request the necessary permissions for GitHub Copilot. To approve these permissions, click “Authorize GitHub Copilot Plugin”.
+#8.After the permissions have been approved, your RStudio IDE will indicate the currently signed in user.
+#9.Close the Global Options dialogue, open a source file (.R, .py, .qmd, etc) and begin coding with Copilot!
+#10.To disable GitHub Copilot Navigate to Tools > Global Options > Copilot and uncheck “Enable GitHub Copilot”, or
+#11 (press tab to use the full suggestion)
+#Example 1 bold_labels
+covid_url <- "https://raw.githubusercontent.com/MoH-Malaysia/covid19-public/refs/heads/main/epidemic/linelist/linelist_deaths.csv"
+deaths <- read_csv(covid_url)
+
+# Initial exploration (summary + missing)
+deaths %>%
+  tbl_summary(missing = "always") %>%
+  modify_caption("**Initial Summary of COVID-19 Linelist Deaths Dataset**") %>%
+  b
+
+#Example 2 - Plotting mortality rate by vaccination status
+#Example 3- Compute max y for placing labels
 
 #====Using chattr for link chatgpt in rstudio====
 install.packages("chattr")
@@ -55,36 +84,6 @@ tbl_result <- modify_header(
 tbl_result <- bold_labels(tbl_result)
 tbl_result
 
-
-#====Using Github copilot ====
-
-#Copilot offers autocomplete-style suggestions as you code as “ghost text”
-#This ghost-text is similar to the existing autocomplete available in RStudio but importantly is a generated suggestion rather than an exact auto-completion.
-
-
-#1.Navigate to Tools > Global Options > Copilot.
-#2.Check the box to “Enable GitHub Copilot”.
-#3.Download and install the Copilot Agent components.
-#4.Click the “Sign In” button.
-#5.In the “GitHub Copilot: Sign in” dialog, copy the Verification Code.
-#6.Navigate to or click on the link to https://github.com/login/device, paste the Verification Code and click “Continue”.
-#7.GitHub will request the necessary permissions for GitHub Copilot. To approve these permissions, click “Authorize GitHub Copilot Plugin”.
-#8.After the permissions have been approved, your RStudio IDE will indicate the currently signed in user.
-#9.Close the Global Options dialogue, open a source file (.R, .py, .qmd, etc) and begin coding with Copilot!
-#10.To disable GitHub Copilot Navigate to Tools > Global Options > Copilot and uncheck “Enable GitHub Copilot”, or
-#11 (press tab to use the full suggestion)
-#Example 1 bold_labels
-covid_url <- "https://raw.githubusercontent.com/MoH-Malaysia/covid19-public/refs/heads/main/epidemic/linelist/linelist_deaths.csv"
-deaths <- read_csv(covid_url)
-
-# Initial exploration (summary + missing)
-deaths %>%
-  tbl_summary(missing = "always") %>%
-  modify_caption("**Initial Summary of COVID-19 Linelist Deaths Dataset**") %>%
-  b
-
-#Example 2 - Plotting mortality rate by vaccination status
-#Example 3- Compute max y for placing labels
 
 #====8. Key Ethical points====
 
