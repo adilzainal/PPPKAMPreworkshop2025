@@ -90,25 +90,29 @@ deaths %>%
 
 #Objective: Highlight the responsible use of AI in public health and transparency reporting based on current guideline. 
 #Key Points:
-#1.	Benefits and limitations of AI tools like ChatGPT.
+#1.	Benefits and limitations of AI tools like ChatGPT and copilot.
 #2.	Ensuring data privacy and avoiding bias in analyses.
 #3.	The importance of human oversight in AI-generated outputs.
 #4.	Transparency reporting of using AI.
 
 
-#1. Benefits and Limitations of AI Tools Like ChatGPT
+#1. Benefits and Limitations of AI Tools Like ChatGPT and copilot
 #AI tools can enhance productivity, improve data analysis, and support health communication. ChatGPT, for instance, can assist in summarizing research, drafting reports, and generating health education content.
 #However, limitations include potential inaccuracies, hallucinated outputs, and lack of contextual awareness. AI models may also reflect biases present in their training data.
 
 #2. Ensuring Data Privacy and Avoiding Bias
 #Ethical AI use must comply with data protection regulations (e.g., HIPAA, GDPR). Sensitive or identifiable health data should never be input into generative AI tools.
 #Bias in AI outputs must be mitigated by critically assessing data sources, ensuring diverse training inputs, and involving domain experts in evaluation processes.
+#Data processing agreement,data processing agreement (DPA) with ChatGPT or OpenAI
+#But note with free chatgpt version
+#But chatgpt not compliance with HIPAA 
 
 #3. Importance of Human Oversight
 #AI-generated content should be reviewed and validated by qualified professionals. Final decisions—especially in clinical or public health contexts—must remain under human authority to maintain accountability and context-appropriate judgment.
 
 #4. Transparency in AI Use Reporting
 #When AI tools contribute to research or public health documentation, their use must be clearly disclosed. This includes:
+#Equator network has published ai extension to many of study types - tripod-ai, consort-ai
 
 #Stating the name and version of the tool (e.g., OpenAI ChatGPT, GPT-4).
 #Describing how AI was used (e.g., content generation, data analysis assistance).
